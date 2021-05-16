@@ -1,0 +1,67 @@
+{
+  "title": "",
+  "description": "Application to manage reparations",
+  "contact": {
+    "company": "Audi",
+    "name": "Bono Arts",
+    "url": "http://www.gettoworktogether.nl/",
+    "email": "info@gettoworktogether.nl"
+  },
+  "version": "1.0.0",
+  "endpoints": [
+    {
+      "method": "GET",
+      "endpoint":"",
+      "description": "Returns the home response."
+    },
+    {
+      "method": "GET",
+      "endpoint":"info",
+      "description": "Returns this description of the API."
+    },
+    {
+      "method": "CRUD",
+      "endpoint":"clients",
+      "description": "All CRUD operations for the clients."
+    },
+    {
+      "method": "CRUD",
+      "endpoint":"users",
+      "description": "All CRUD operations for the users."
+    },
+    {
+      "method": "CRUD",
+      "endpoint":"cars",
+      "description": "All CRUD operations for the cars.",
+      "other": {
+        "upload": {
+          "method": "post",
+          "endpoint": "upload",
+          "description": "Here you can upload multiple files, the download Url will be returned"
+        },
+        "download": {
+          "method": "get",
+          "endpoint": "download/{file}",
+          "description": "Here you can upload download a single file"
+        }
+      }
+    },
+    {
+      "method": "CRUD",
+      "endpoint":"reparations",
+      "description": "All CRUD operations for the reparations.",
+      "other": {
+        "receipt": {
+          "method": "get",
+          "endpoint": "receipt/{id}",
+          "description": "Get the reparation with all the actions and resources and calculate the full price + 21% btw."
+        }
+      }
+    },
+    {
+      "method": "CRUD",
+      "endpoint":"actions",
+      "description": "All CRUD operations for the actions."
+    }
+  ]
+}
